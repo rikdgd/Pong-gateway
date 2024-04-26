@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    com.pong.ponggateway: DEBUG
+
+spring:
+  application:
+    name: pong-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: userUri
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/users/**
+            - Query=id
+            - Method=GET,POST
