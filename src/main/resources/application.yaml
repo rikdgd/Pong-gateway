@@ -18,3 +18,9 @@ spring:
             - Path=/users/**
             - Query=id
             - Method=GET,POST
+            
+        - id: transactionUri
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/
+            - Method=GET,POST
